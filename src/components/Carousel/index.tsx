@@ -29,6 +29,8 @@ export const Carousel = forwardRef(
       onSlidesVisibilityChange,
       onSlideVisible,
       children,
+      hideArrowsWhileScrolling,
+      hideArrowOnEnd,
     }: CarouselProps,
     ref: React.Ref<CarouselRef>
   ) => {
@@ -191,22 +193,24 @@ export const Carousel = forwardRef(
       if (!sliderRef.current || !arrowNextRef.current || !arrowPrevRef.current)
         return
 
-      if (isScrolling) {
+      if (hideArrowsWhileScrolling && isScrolling) {
         arrowNextRef.current.style.display = 'none'
         arrowPrevRef.current.style.display = 'none'
 
         return
       }
 
-      if (sliderRef.current.scrollLeft <= hideArrowThreshold) {
-        arrowNextRef.current.style.display = 'block'
-        arrowPrevRef.current.style.display = 'none'
-      } else if (
-        sliderRef.current.clientWidth + sliderRef.current.scrollLeft >=
-        sliderRef.current.scrollWidth - hideArrowThreshold
-      ) {
-        arrowPrevRef.current.style.display = 'block'
-        arrowNextRef.current.style.display = 'none'
+      if (hideArrowOnEnd) {
+        if (sliderRef.current.scrollLeft <= hideArrowThreshold) {
+          arrowNextRef.current.style.display = 'block'
+          arrowPrevRef.current.style.display = 'none'
+        } else if (
+          sliderRef.current.clientWidth + sliderRef.current.scrollLeft >=
+          sliderRef.current.scrollWidth - hideArrowThreshold
+        ) {
+          arrowPrevRef.current.style.display = 'block'
+          arrowNextRef.current.style.display = 'none'
+        }
       } else {
         arrowNextRef.current.style.display = 'block'
         arrowPrevRef.current.style.display = 'block'

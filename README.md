@@ -2,6 +2,8 @@
 
 > - Replaced `styled-components` with `@emotion/styled` and `@emotion/react`
 > - Changed typing in `Carousel/index.tsx`
+> - Added new prop `hideArrowsWhileScrolling` so the "hiding" of the arrows is optional
+> - Added ne prop `hideArrowOnEnd` so the hiding of the arrow at start and end is optional
 
 This is a fork of the [`react-scroll-snap-slider`](https://github.com/lifarl/react-scroll-snap-slider) package from @lifarl.
 Since it's one of the best options at the market when it comes to simplicity and file-size this module is a wonderful solution.

@@ -11,6 +11,8 @@ export interface CarouselProps {
   onScrollEnd?: (index: number) => void
   onSlidesVisibilityChange?: (index: number) => void
   onSlideVisible?: (index: number) => void
+  hideArrowsWhileScrolling?: boolean
+  hideArrowOnEnd?: boolean
 }
 
 export interface SlidesPerPageSettings {
