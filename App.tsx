@@ -16,7 +16,7 @@ const App = () => {
   for (let i = 0; i <= itemNumber; i++) {
     const hex = getRndHex()
     items.push({
-      src: `https://via.placeholder.com/300/${hex}/808080/`,
+      src: `https://picsum.photos/seed/${hex}/300/300`,
     })
   }
   const slidesPerPageSettings = {

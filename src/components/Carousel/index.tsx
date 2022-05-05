@@ -33,7 +33,7 @@ export const Carousel = forwardRef(
     ref: React.Ref<CarouselRef>
   ) => {
     const [isScrolling, setIsScrolling] = useState(false)
-    const scrollTimeout = useRef<number | null>(null)
+    const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
     const sliderRef = useRef<HTMLDivElement>(null)
     const slideRefs = useRef<HTMLLIElement[]>([])
     const arrowPrevRef = useRef<HTMLDivElement>(null)

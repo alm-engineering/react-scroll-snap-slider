@@ -2,13 +2,14 @@
   "compilerOptions": {
     "outDir": "./dist",
     "target": "es5",
-    "module": "ES2015",
+    "module": "esnext",
     "noImplicitAny": false,
     "strictNullChecks": true,
     "removeComments": true,
     "declaration": true,
     "sourceMap": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "jsx": "react"
   },
   "include": ["./src/**/*.tsx", "./src/**/*.ts"],

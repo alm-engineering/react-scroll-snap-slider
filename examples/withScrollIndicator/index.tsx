@@ -1,6 +1,6 @@
 import React, { useRef, useState, useMemo } from 'react'
 import { Slider } from '../../src'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { getRndHex } from '../getRndHex'
 
 interface ScrollSnapSliderRef {

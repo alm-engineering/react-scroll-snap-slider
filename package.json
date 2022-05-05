@@ -1,5 +1,5 @@
 {
-  "name": "@lifarl/react-scroll-snap-slider",
+  "name": "@alm-engineering/react-scroll-snap-slider",
   "version": "2.0.5",
   "description": "",
   "main": "dist/index.js",
@@ -8,15 +8,15 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "rm -rf ./dist && rollup -c",
-    "build:pages": "rm -rf ./dist && parcel build index.html --public-url https://lifarl.github.io/react-scroll-snap-slider/",
+    "build:pages": "rm -rf ./dist && parcel build index.html --public-url https://alm-engineering.github.io/react-scroll-snap-slider/",
     "deploy:pages": "gh-pages -d dist",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifarl/react-scroll-snap-slider.git"
+    "url": "https://github.com/alm-engineering/react-scroll-snap-slider.git"
   },
-  "homepage": "https://lifarl.github.io/react-scroll-snap-slider",
+  "homepage": "https://alm-engineering.github.io/react-scroll-snap-slider",
   "keywords": [
     "react",
     "carousel",
@@ -25,16 +25,17 @@
     "scroll",
     "slider"
   ],
-  "author": "lifarl",
+  "author": "Michael Zoidl (@alm-engineering)",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@testing-library/react": "^10.0.2",
     "@types/jest": "^25.1.4",
     "@types/react": "^16.9.26",
     "@types/react-dom": "^16.9.5",
-    "@types/styled-components": "^5.0.1",
     "@types/testing-library__react": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
@@ -63,16 +64,15 @@
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "rollup-plugin-visualizer": "^4.0.4",
-    "styled-components": "^5.0.1",
     "ts-jest": "^25.3.0",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "react": ">=16.8.3",
-    "react-dom": ">=16.8.3",
-    "styled-components": "^5.0.1"
+    "react-dom": ">=16.8.3"
   },
-  "dependencies": {},
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",

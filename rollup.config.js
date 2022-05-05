@@ -22,7 +22,13 @@ export default [
         sourcemap: true,
       },
     ],
-    external: ['react', 'react-dom', 'react-is', 'styled-components'],
+    external: [
+      'react',
+      'react-dom',
+      'react-is',
+      '@emotion/styled',
+      '@emotion/react',
+    ],
     plugins: [
       resolve(),
       typescript(),
