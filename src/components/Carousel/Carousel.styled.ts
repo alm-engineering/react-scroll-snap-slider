@@ -14,7 +14,7 @@ export const StyledSlider = styled.div`
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   scroll-behavior: smooth;
   overflow-x: scroll;
   width: 100%;

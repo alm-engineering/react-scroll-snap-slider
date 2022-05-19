@@ -6,6 +6,7 @@ export interface CarouselProps {
     onClick,
   }: CustomArrowProps) => JSX.Element
   slidesPerPageSettings?: SlidesPerPageSettings
+  breakpoints?: Breakpoints
   slideWidth?: number
   onScrollStart?: (index: number) => void
   onScrollEnd?: (index: number) => void
@@ -13,6 +14,12 @@ export interface CarouselProps {
   onSlideVisible?: (index: number) => void
   hideArrowsWhileScrolling?: boolean
   hideArrowOnEnd?: boolean
+}
+
+export interface Breakpoints {
+  mobile: number
+  tablet: number
+  desktop: number
 }
 
 export interface SlidesPerPageSettings {

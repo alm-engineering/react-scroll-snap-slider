@@ -31,6 +31,7 @@ export const Carousel = forwardRef(
       children,
       hideArrowsWhileScrolling,
       hideArrowOnEnd,
+      breakpoints,
     }: CarouselProps,
     ref: React.Ref<CarouselRef>
   ) => {
@@ -109,6 +110,7 @@ export const Carousel = forwardRef(
         const slidesToScroll = Math.floor(
           sliderRef.current.clientWidth / slideWidth
         )
+
         sliderRef.current.scrollBy({
           top: 0,
           behavior: 'smooth',
@@ -255,6 +257,7 @@ export const Carousel = forwardRef(
                 slideIndex={index}
                 slidesPerPageSettings={slidesPerPageSettings}
                 slideWidth={slideWidth}
+                breakpoints={breakpoints}
                 ref={(node: HTMLLIElement) => addNode(node, index)}
               >
                 {child}

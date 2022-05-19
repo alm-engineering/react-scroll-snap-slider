@@ -4,7 +4,13 @@ import { StyledSlide } from './Slide.styled'
 
 const Slide = React.forwardRef(
   (
-    { slideIndex, slidesPerPageSettings, slideWidth, children }: SlideProps,
+    {
+      slideIndex,
+      slidesPerPageSettings,
+      slideWidth,
+      children,
+      breakpoints,
+    }: SlideProps,
     ref: React.Ref<HTMLLIElement>
   ) => {
     return (
@@ -13,6 +19,7 @@ const Slide = React.forwardRef(
         slideWidth={slideWidth}
         data-index-number={slideIndex}
         key={slideIndex}
+        breakpoints={breakpoints}
         ref={ref}
       >
         {children}

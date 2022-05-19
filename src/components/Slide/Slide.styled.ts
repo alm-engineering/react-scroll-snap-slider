@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { StyledSlideProps } from './Slide.interface'
 
 export const StyledSlide = styled.li<StyledSlideProps>`
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   display: flex;
   justify-content: center;
   min-width: ${(props: StyledSlideProps) =>
@@ -11,25 +11,25 @@ export const StyledSlide = styled.li<StyledSlideProps>`
       : props.slideWidth
       ? `${props.slideWidth}px`
       : '100%'};
-  :not(:last-child) {
-    margin-right: 8px;
-  }
 
-  @media (min-width: 512px) {
+  @media (min-width: ${(props: StyledSlideProps) =>
+      props.breakpoints?.mobile || 512}px) {
     ${(props: StyledSlideProps) =>
       props.slidesPerPageSettings
         ? `min-width: ${100 / props.slidesPerPageSettings.mobileBig}%`
         : ''};
   }
 
-  @media (min-width: 753px) {
+  @media (min-width: ${(props: StyledSlideProps) =>
+      props.breakpoints?.tablet || 753}px) {
     ${(props: StyledSlideProps) =>
       props.slidesPerPageSettings
         ? `min-width: ${100 / props.slidesPerPageSettings.tablet}%`
         : ''};
   }
 
-  @media (min-width: 1232px) {
+  @media (min-width: ${(props: StyledSlideProps) =>
+      props.breakpoints?.desktop || 1232}px) {
     ${(props: StyledSlideProps) =>
       props.slidesPerPageSettings
         ? `min-width: ${100 / props.slidesPerPageSettings.desktop}%`
