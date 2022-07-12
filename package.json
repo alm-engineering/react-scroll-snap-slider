@@ -1,6 +1,6 @@
 {
   "name": "@alm-engineering/react-scroll-snap-slider",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -78,7 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "commit-msg": "commitlint",
       "pre-commit": "lint-staged && yarn test"
     }
   },

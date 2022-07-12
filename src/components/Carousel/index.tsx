@@ -32,6 +32,7 @@ export const Carousel = forwardRef(
       hideArrowsWhileScrolling,
       hideArrowOnEnd,
       breakpoints,
+      isCarousel,
     }: CarouselProps,
     ref: React.Ref<CarouselRef>
   ) => {
@@ -89,7 +90,10 @@ export const Carousel = forwardRef(
           ]
 
         onSlidesVisibilityChange &&
-          onSlidesVisibilityChange(medianVisibleSlideIndex.current)
+          onSlidesVisibilityChange(
+            medianVisibleSlideIndex.current,
+            lastVisibleSlideIndex.current
+          )
       },
       []
     )
@@ -111,11 +115,23 @@ export const Carousel = forwardRef(
           sliderRef.current.clientWidth / slideWidth
         )
 
-        sliderRef.current.scrollBy({
-          top: 0,
-          behavior: 'smooth',
-          left: slidesToScroll * slideWidth * dir,
-        })
+        if (
+          slideRefs.current.length === lastVisibleSlideIndex.current + 1 &&
+          direction === 'next' &&
+          isCarousel
+        ) {
+          sliderRef.current.scrollBy({
+            top: 0,
+            behavior: 'smooth',
+            left: slideRefs.current.length * slideWidth * -1,
+          })
+        } else {
+          sliderRef.current.scrollBy({
+            top: 0,
+            behavior: 'smooth',
+            left: slidesToScroll * slideWidth * dir,
+          })
+        }
       }
     }
 
@@ -227,11 +243,15 @@ export const Carousel = forwardRef(
               direction: 'prev',
               ref: arrowPrevRef,
               onClick: manualScroll,
+              disabled: lastVisibleSlideIndex.current === 0 && !isCarousel,
             })}
             {renderCustomArrow({
               direction: 'next',
               ref: arrowNextRef,
               onClick: manualScroll,
+              disabled:
+                lastVisibleSlideIndex.current + 1 ===
+                  slideRefs.current.length && !isCarousel,
             })}
           </React.Fragment>
         ) : (
