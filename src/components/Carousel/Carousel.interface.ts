@@ -16,6 +16,7 @@ export interface CarouselProps {
   hideArrowsWhileScrolling?: boolean
   hideArrowOnEnd?: boolean
   isCarousel?: boolean
+  hideArrows?: boolean
 }
 
 export interface Breakpoints {

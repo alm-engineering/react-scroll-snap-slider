@@ -31,6 +31,7 @@ export const Carousel = forwardRef(
       children,
       hideArrowsWhileScrolling,
       hideArrowOnEnd,
+      hideArrows,
       breakpoints,
       isCarousel,
     }: CarouselProps,
@@ -86,7 +87,7 @@ export const Carousel = forwardRef(
 
         medianVisibleSlideIndex.current =
           visibleSlidesIndices.current[
-            Math.floor(visibleSlidesIndices.current.length / 2)
+          Math.floor(visibleSlidesIndices.current.length / 2)
           ]
 
         onSlidesVisibilityChange &&
@@ -237,7 +238,7 @@ export const Carousel = forwardRef(
 
     return (
       <StyledCarousel>
-        {renderCustomArrow ? (
+        {hideArrows ? null : renderCustomArrow ? (
           <React.Fragment>
             {renderCustomArrow({
               direction: 'prev',
@@ -251,7 +252,7 @@ export const Carousel = forwardRef(
               onClick: manualScroll,
               disabled:
                 lastVisibleSlideIndex.current + 1 ===
-                  slideRefs.current.length && !isCarousel,
+                slideRefs.current.length && !isCarousel,
             })}
           </React.Fragment>
         ) : (
