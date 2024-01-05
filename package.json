@@ -1,6 +1,6 @@
 {
   "name": "@alm-engineering/react-scroll-snap-slider",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -71,8 +71,8 @@
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@emotion/react": ">=11.9.0",
+    "@emotion/styled": ">=11.8.1",
     "react": ">=16.8.3",
     "react-dom": ">=16.8.3"
   },
